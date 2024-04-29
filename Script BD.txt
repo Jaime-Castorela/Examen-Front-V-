@@ -1,0 +1,48 @@
+-- Table: public.ciudadano
+
+-- DROP TABLE IF EXISTS public.ciudadano;
+
+CREATE TABLE IF NOT EXISTS public.ciudadano
+(
+    id bigint NOT NULL DEFAULT nextval('ciudadano_id_seq'::regclass),
+    domicilio character varying(255) COLLATE pg_catalog."default",
+    apellido character varying(255) COLLATE pg_catalog."default",
+    correo character varying(255) COLLATE pg_catalog."default",
+    nombre character varying(255) COLLATE pg_catalog."default",
+    telefono character varying(10) COLLATE pg_catalog."default",
+    CONSTRAINT ciudadano_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.ciudadano
+    OWNER to postgres;
+
+
+-- Table: public.domicilios
+
+-- DROP TABLE IF EXISTS public.domicilios;
+
+CREATE TABLE IF NOT EXISTS public.domicilios
+(
+    id bigint NOT NULL DEFAULT nextval('domicilios_id_seq'::regclass),
+    ciudad character varying(255) COLLATE pg_catalog."default",
+    codigo_postal character varying(255) COLLATE pg_catalog."default",
+    direccion character varying(255) COLLATE pg_catalog."default",
+    tipo_residencia character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT domicilios_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.domicilios
+    OWNER to postgres;
+
+INSERT INTO public.ciudadano(
+	 domicilio, apellido, correo, nombre, telefono)
+	VALUES ("Santa rosa,", 'Castorela Guzmán', 'jaime@hotmial.com',  'Jaime Emmanuel, '7626280382',);
+
+
+INSERT INTO public.domicilios(
+	 ciudad, codigo_postal, direccion, tipo_residencia)
+	VALUES ('Queretaro', '123456', 'Santa Rosa, 'Casa');
