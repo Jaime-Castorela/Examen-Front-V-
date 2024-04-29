@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h4><b>Editar Ciudadano</b></h4>
+                    </div>
+                    <div class="col-sm-10">
+                      
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <div class="table-content">
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label for="nombre" class="p-t-b-10">Nombre<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nombre"  [(ngModel)]="nuevoCiudadano.nombre" formControlName="nombre" placeholder="Ingrese el nombre">
+                        </div>
+                    </div>
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label for="apellidos" class="p-t-b-10">Apellidos<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="apellidos" [(ngModel)]="nuevoCiudadano.apellido" formControlName="apellido" placeholder="Ingrese los apellidos">
+                        </div>
+                    </div>
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label for="correo" class="p-t-b-10">Correo electrónico<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="correo" [(ngModel)]="nuevoCiudadano.correo" formControlName="correo" placeholder="Ingrese el correo electrónico">
+                        </div>
+                    </div>
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label for="Domicilio" class="p-t-b-10">Dirección<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="Domicilio" formControlName="Domicilio" [(ngModel)]="nuevoCiudadano.domicilio" rows="3" placeholder="Ingrese la dirección"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label for="telefono" class="p-t-b-10">Teléfono<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="tel" class="form-control" id="telefono" formControlName="telefono" [(ngModel)]="nuevoCiudadano.telefono" placeholder="Ingrese el teléfono">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-footer">
+                    <button type="submit" class="btn btn-success" style="margin-right: 25px;" [disabled]="!formulario.valid">Guardar</button>
+                    <button type="reset" class="btn btn-secondary" style="margin-right: 10px;" >Limpiar</button>
+                    <a href="#" routerLink="/Ciudadanos" class="btn btn-primary back"><i class='fas fa-arrow-circle-left'></i> Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  

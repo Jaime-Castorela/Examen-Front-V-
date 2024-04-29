@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-2">
+                      <h4><b>Nuevo Ciudadano</b></h4>
+                  </div>
+                  <div class="col-sm-10">
+                    
+                  </div>
+              </div>
+          </div>
+          <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+              <div class="table-content">
+                  <div class="form-group p-10 row">
+                      <div class="col-sm-3">
+                          <label for="FirstName" class="p-t-b-10">Nombre<span class="requiredStar">*</span></label>
+                      </div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="FirstName" placeholder="Ingrese el nombre" required>
+                      </div>
+                  </div>
+                  <div class="form-group p-10 row">
+                      <div class="col-sm-3">
+                          <label for="LastName" class="p-t-b-10">Apellidos<span class="requiredStar">*</span></label>
+                      </div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="LastName" placeholder="Ingrese los apellidos" required>
+                      </div>
+                  </div>
+                  <div class="form-group p-10 row">
+                      <div class="col-sm-3">
+                          <label class="p-t-b-10">Correo electrónico<span class="requiredStar">*</span></label>
+                      </div>
+                      <div class="col-sm-9">
+                          <input type="email" class="form-control" id="Email" placeholder="Ingrese el correo electrónico" required>
+                      </div>
+                  </div>
+                  <div class="form-group p-10 row">
+                      <div class="col-sm-3">
+                          <label class="p-t-b-10">Dirección<span class="requiredStar">*</span></label>
+                      </div>
+                      <div class="col-sm-9">
+                          <textarea class="form-control" id="Address" rows="3" placeholder="Ingrese la dirección" required></textarea>
+                      </div>
+                  </div>
+                  <div class="form-group p-10 row">
+                      <div class="col-sm-3">
+                          <label class="p-t-b-10">Teléfono<span class="requiredStar">*</span></label>
+                      </div>
+                      <div class="col-sm-9">
+                          <input type="tel" class="form-control" id="Phone" placeholder="Ingrese el teléfono" required>
+                      </div>
+                  </div>
+              </div>
+              <div class="table-footer">
+                  <button type="submit" class="btn btn-success" style="margin-right: 25px;" [disabled]="!formulario.valid">Guardar</button>
+                  <button type="reset" class="btn btn-secondary" style="margin-right: 10px;" >Limpiar</button>
+                  <a href="#" routerLink="/Ciudadanos" class="btn btn-primary back"><i class='fas fa-arrow-circle-left'></i> Regresar</a>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
